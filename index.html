@@ -1,5 +1,86 @@
-<html>
-  <body>
-    
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Widget Structure</title>
+</head>
+<body>
+
+    <main>
+        
+        <section id="current-weather">
+            <header>
+                <h1>Monday</h1>
+                <time datetime="2022-06-20">20 Jun 2022</time>
+                <p><span>Location Icon</span> Biarritz, FR</p>
+            </header>
+            
+            <div class="weather-display">
+                <p>Sun Icon</p>
+                <p>29 °C</p>
+                <p>Sunny</p>
+            </div>
+        </section>
+
+        <section id="weather-details">
+            <dl>
+                <dt>PRECIPITATION</dt>
+                <dd>0%</dd>
+                
+                <dt>HUMIDITY</dt>
+                <dd>42%</dd>
+                
+                <dt>WIND</dt>
+                <dd>3 km/h</dd>
+            </dl>
+
+            <div class="unit-toggle">
+                <span>TEMPERATURE</span>
+                <button aria-label="Celsius">°C</button> / <button aria-label="Fahrenheit">°F</button>
+            </div>
+
+            <section id="forecast">
+                <div class="day-card active">
+                    <p>Sun Icon</p>
+                    <p>Tue</p>
+                    <p>30 °C</p>
+                </div>
+                <div class="day-card">
+                    <p>Cloudy Icon</p>
+                    <p>Wed</p>
+                    <p>22 °C</p>
+                </div>
+                <div class="day-card">
+                    <p>Rain Icon</p>
+                    <p>Thu</p>
+                    <p>06 °C</p>
+                </div>
+                <div class="day-card">
+                    <p>Sun Icon</p>
+                    <p>Fri</p>
+                    <p>26 °C</p>
+                </div>
+            </section>
+
+            <footer>
+                <button>
+                    <span>Location Icon</span> New York City <span>+</span>
+                </button>
+            </footer>
+        </section>
+
+        <aside id="location-modal">
+            <button aria-label="Close">X</button>
+            <h2>Add a new location</h2>
+            
+            <form>
+                <input type="text" placeholder="Enter city or zip code" aria-label="Search city">
+                <p>or</p>
+                <button type="button">Use current location <span>Arrow Icon</span></button>
+            </form>
+        </aside>
+
+    </main>
+
+</body>
 </html>
