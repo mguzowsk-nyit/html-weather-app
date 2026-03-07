@@ -38,7 +38,7 @@
     --border-radius-10: 10px;
 
     /* font family */
-    --font-family-montserrat: montserrat;
+    --font-family-montserrat: 'montserrat';
 
     /* font sizes */
     --font-display-large: var(--font-size-50);
@@ -63,4 +63,13 @@
     --font-heading-small: var(--font-weight-bold);
     --font-body-secondary: var(--font-weight-regular);
     --font-body-small: var(--font-weight-regular);
+
+      /* design */
+      --app-background: var(--color-blue-navy-100);
+
+      /* typography */
+      --primary-text-color: var(--color-white-100);
+
+       /* border sizes */
+      --border-round-date-panel: var(--border-radius-30);
 }
