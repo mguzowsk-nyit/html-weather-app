@@ -1,0 +1,66 @@
+:root{
+    /* color */
+    --color-blue-navy-100: #343D4B;
+    --color-blue-navy-80: #343D4B 0.8;
+    --color-white-100: #FFFFFF;
+    --color-black-100: #000000;
+
+    /* font size */
+    --font-size-50: 50px;
+    --font-size-40: 40px;
+    --font-size-38: 38px;
+    --font-size-30: 30px;
+    --font-size-28: 28px;
+    --font-size-26: 26px;
+    --font-size-24: 24px;
+    --font-size-22: 22px;
+    --font-size-20: 20px;
+    --font-size-18: 18px;
+    --font-size-16: 16px;
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+
+    /* corner roundness */
+    --corner-rounded-100: 100px;
+    --corner-rounded-30: 30px;
+    --corner-rounded-25: 25px;
+    --corner-rounded-10: 10px;
+
+    /* border radius */
+    --border-radius-80: 80px;
+    --border-radius-60: 60px;
+    --border-radius-55: 55px;
+    --border-radius-50: 50px;
+    --border-radius-45: 45px;
+    --border-radius-35: 35px;
+    --border-radius-30: 30px;
+    --border-radius-24: 24px;
+    --border-radius-10: 10px;
+
+    /* font family */
+    --font-family-montserrat: montserrat;
+
+    /* font sizes */
+    --font-display-large: var(--font-size-50);
+    --font-display-medium: var(--font-size-38);
+    --font-heading-large: var(--font-size-30);
+    --font-heading-label: var(--font-size-28);
+    --font-heading-data: var(--font-size-28);
+    --font-subheading-date: var(--font-size-22);
+    --font-link: var(--font-size-20);
+    --font-heading-small: var(--font-size-20);
+    --font-body-secondary: var(--font-size-20);
+    --font-body-small: var(--font-size-16);
+
+    /* font weights */
+    --font-display-large: var(--font-weight-bold);
+    --font-display-medium: var(--font-weight-bold);
+    --font-heading-large: var(--font-weight-bold);
+    --font-heading-label: var(--font-weight-bold);
+    --font-heading-data: var(--font-weight-medium);
+    --font-subheading-date: var(--font-weight-medium);
+    --font-link: var(--font-weight-semibold);
+    --font-heading-small: var(--font-weight-bold);
+    --font-body-secondary: var(--font-weight-regular);
+    --font-body-small: var(--font-weight-regular);
+}
