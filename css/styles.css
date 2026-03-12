@@ -1,11 +1,156 @@
+/* --- Original Styles & Base Setup --- */
 body {
-    font-family: var(--font-family-montserrat);
+    font-family: var(--font-family-montserrat), sans-serif;
     font-size: var(--font-body-secondary);
     background-color: var(--app-background);
     color: var(--primary-text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* --- Layout Structure --- */
+main {
+    display: flex;
+    width: 900px;
+    height: 500px; /* Fixed height to match the design feel */
+    border-radius: var(--border-radius-30);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* --- Left Panel: Current Weather --- */
 .current-weather {
-    border-radius: var(--border-round-date-panel);
+    flex: 1;
+    padding: 40px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('../assets/your-beach-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--color-white-100);
+}
+
+.current-weather h1 {
+    font-size: var(--font-heading-large);
+    margin: 0;
+}
+
+.current-weather time {
+    font-size: var(--font-subheading-date);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.weather-display {
+    font-size: var(--font-display-large);
+    font-weight: bold;
+}
+
+/* --- Right Panel: Details --- */
+#weather-details {
+    flex: 1.4;
+    background-color: var(--color-blue-navy-100);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Data List Styling */
+dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 0;
+    margin: 0 0 20px 0;
+}
+
+dt {
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+dd {
+    margin: 0;
+    text-align: right;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Unit Toggle */
+.unit-toggle {
+    margin-bottom: 20px;
+    font-weight: var(--font-weight-bold);
+}
+
+.unit-toggle button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+/* --- Forecast Cards --- */
+#forecast {
+    display: flex;
+    gap: 12px;
+}
+
+.day-card {
+    flex: 1;
+    background-color: #3d4655; /* Slightly lighter navy for depth */
+    border-radius: var(--border-radius-10);
+    padding: 15px 5px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.day-card.active {
     background-color: var(--color-white-100);
+    color: var(--color-black-100);
+}
+
+.day-card p {
+    margin: 5px 0;
+    font-size: var(--font-body-small);
+}
+
+/* --- Footer Button --- */
+footer button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius-10);
+    background: linear-gradient(90deg, #8EDAD5, #6376DD);
+    color: var(--color-white-100);
+    font-family: var(--font-family-montserrat);
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* --- Location Modal (Blurred Overlay) --- */
+#location-modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    /* To hide/show: use display: none; or opacity: 0; */
+    display: none; 
 }
