@@ -1,156 +1,184 @@
-/* --- Original Styles & Base Setup --- */
-body {
-    font-family: var(--font-family-montserrat), sans-serif;
-    font-size: var(--font-body-secondary);
-    background-color: var(--app-background);
-    color: var(--primary-text-color);
+/* --- 1. Global Reset --- */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--app-background);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* --- Layout Structure --- */
+/* --- 2. Main Container --- */
 main {
     display: flex;
-    width: 900px;
-    height: 500px; /* Fixed height to match the design feel */
-    border-radius: var(--border-radius-30);
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    align-items: center; 
+    width: 1015px; 
+    height: 666px; 
     position: relative;
 }
 
-/* --- Left Panel: Current Weather --- */
+/* --- 3. Left Panel (Monday) - Absolute Positioning per Guidelines --- */
 .current-weather {
-    flex: 1;
-    padding: 40px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url('../assets/your-beach-image.jpg');
+    width: 493px; 
+    height: 666px; 
+    background: url('../images/waves.svg') no-repeat center;
     background-size: cover;
-    background-position: center;
+    color: white;
+    border-radius: 30px; 
+    z-index: 2; 
+    box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Monday: Adjusted slightly higher based on overlay */
+.current-weather h1 { 
+    font-size: 40px; 
+    position: absolute;
+    top: 45px; 
+    left: 44px;
+}
+
+/* 20 Jun 2022: Your Anchor Point (Correct Position) */
+.current-weather time { 
+    font-size: 24px; 
+    position: absolute;
+    top: 100px; 
+    left: 44px;
+}
+
+/* Biarritz, FR: Adjusted based on guidelines */
+.location-biarritz-row {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: var(--color-white-100);
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 148px; 
+    left: 44px;
 }
 
-.current-weather h1 {
-    font-size: var(--font-heading-large);
-    margin: 0;
+.icon-biarritz { width: 27px; height: 27px; }
+
+/* Main Sun Icon: Pushed down based on red guidelines */
+.weather-icon-main { 
+    width: 95px; 
+    height: 95px; 
+    position: absolute;
+    top: 388px; 
+    left: 44px;
 }
 
-.current-weather time {
-    font-size: var(--font-subheading-date);
-    display: block;
-    margin-bottom: 10px;
+/* 29 °C: Adjusted higher than previous version per guidelines */
+.temp-big { 
+    font-size: 50px; 
+    font-weight: 700; 
+    position: absolute;
+    top: 495px; 
+    left: 44px;
 }
 
-.weather-display {
-    font-size: var(--font-display-large);
-    font-weight: bold;
+/* Sunny: Locked at 84px from the very bottom edge */
+.weather-desc { 
+    font-size: 30px; 
+    font-weight: 700; 
+    position: absolute;
+    bottom: 84px; 
+    left: 44px;
 }
 
-/* --- Right Panel: Details --- */
+/* --- 4. Right Panel --- */
 #weather-details {
-    flex: 1.4;
-    background-color: var(--color-blue-navy-100);
+    width: 522px; 
+    height: 623px; 
+    background-color: #222831; 
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: white;
+    border-radius: 0 30px 30px 0;
+    margin-left: -20px; 
+    padding-left: 60px; 
+    position: relative;
 }
 
-/* Data List Styling */
-dl {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 0;
-    margin: 0 0 20px 0;
-}
+dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 0; }
+dt { font-weight: 700; font-size: 28px; text-transform: uppercase; }
+dd { text-align: right; font-weight: 500; font-size: 28px; }
 
-dt {
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-}
+.unit-toggle { display: flex; justify-content: space-between; align-items: center; width: 415px; }
+.label-temp { font-size: 28px; font-weight: 700; }
+.unit-toggle button, .slash { background: none; border: none; color: white; font-family: inherit; font-size: 28px; font-weight: 500; }
+.unit-toggle button[aria-label="Fahrenheit"] { opacity: 0.4; }
 
-dd {
-    margin: 0;
-    text-align: right;
-    font-weight: var(--font-weight-medium);
-}
-
-/* Unit Toggle */
-.unit-toggle {
-    margin-bottom: 20px;
-    font-weight: var(--font-weight-bold);
-}
-
-.unit-toggle button {
-    background: none;
-    border: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    padding: 0 5px;
-}
-
-/* --- Forecast Cards --- */
-#forecast {
+/* --- 5. Forecast (Side-to-Side) --- */
+.forecast-outer-bg {
+    width: 415px;
+    height: 165px;
+    background-color: #272E37;
+    border-radius: 10px;
     display: flex;
-    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecast-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .day-card {
-    flex: 1;
-    background-color: #3d4655; /* Slightly lighter navy for depth */
-    border-radius: var(--border-radius-10);
-    padding: 15px 5px;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-
-.day-card.active {
-    background-color: var(--color-white-100);
-    color: var(--color-black-100);
-}
-
-.day-card p {
-    margin: 5px 0;
-    font-size: var(--font-body-small);
-}
-
-/* --- Footer Button --- */
-footer button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: var(--border-radius-10);
-    background: linear-gradient(90deg, #8EDAD5, #6376DD);
-    color: var(--color-white-100);
-    font-family: var(--font-family-montserrat);
-    font-weight: var(--font-weight-bold);
+    width: 103px; 
+    height: 165px; 
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    cursor: pointer;
 }
 
-/* --- Location Modal (Blurred Overlay) --- */
+.day-card.active { background-color: white; color: #222831; }
+.forecast-icon { width: 54px; height: 54px; }
+.day-label { font-size: 20px; font-weight: 500; }
+.forecast-temp { font-size: 20px; font-weight: 700; }
+
+/* --- 6. Footer & NYC Button --- */
+.btn-location {
+    width: 415px;
+    height: 53px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #8EDAD5, #6376DD);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
+}
+
+.location-group { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; }
+.icon-nyc { width: 33px; height: 33px; }
+.plus-icon { width: 48px; height: 48px; margin-left: auto; }
+
+/* --- 7. Modal --- */
 #location-modal {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    display: flex;
-    flex-direction: column;
+    display: none; 
     justify-content: center;
     align-items: center;
-    z-index: 10;
-    /* To hide/show: use display: none; or opacity: 0; */
-    display: none; 
+    z-index: 100;
+    border-radius: 30px;
 }
