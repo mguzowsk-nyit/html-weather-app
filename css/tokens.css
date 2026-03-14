@@ -1,11 +1,11 @@
-:root{
-    /* color */
+:root {
+    /* colors */
     --color-blue-navy-100: #343D4B;
-    --color-blue-navy-80: #343D4B 0.8;
+    --color-blue-navy-80: rgba(52, 61, 75, 0.8);
     --color-white-100: #FFFFFF;
     --color-black-100: #000000;
 
-    /* font size */
+    /* font sizes */
     --font-size-50: 50px;
     --font-size-40: 40px;
     --font-size-38: 38px;
@@ -38,38 +38,44 @@
     --border-radius-10: 10px;
 
     /* font family */
-    --font-family-montserrat: 'montserrat';
-
-    /* font sizes */
-    --font-display-large: var(--font-size-50);
-    --font-display-medium: var(--font-size-38);
-    --font-heading-large: var(--font-size-30);
-    --font-heading-label: var(--font-size-28);
-    --font-heading-data: var(--font-size-28);
-    --font-subheading-date: var(--font-size-22);
-    --font-link: var(--font-size-20);
-    --font-heading-small: var(--font-size-20);
-    --font-body-secondary: var(--font-size-20);
-    --font-body-small: var(--font-size-16);
+    --font-family-montserrat: 'Montserrat', sans-serif;
 
     /* font weights */
-    --font-display-large: var(--font-weight-bold);
-    --font-display-medium: var(--font-weight-bold);
-    --font-heading-large: var(--font-weight-bold);
-    --font-heading-label: var(--font-weight-bold);
-    --font-heading-data: var(--font-weight-medium);
-    --font-subheading-date: var(--font-weight-medium);
-    --font-link: var(--font-weight-semibold);
-    --font-heading-small: var(--font-weight-bold);
-    --font-body-secondary: var(--font-weight-regular);
-    --font-body-small: var(--font-weight-regular);
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
 
-      /* design */
-      --app-background: var(--color-blue-navy-100);
+    /* typography scale — sizes */
+    --font-size-display-large: var(--font-size-40);
+    --font-size-display-medium: var(--font-size-30);
+    --font-size-heading-large: var(--font-size-26);
+    --font-size-heading-label: var(--font-size-20);
+    --font-size-heading-data: var(--font-size-20);
+    --font-size-subheading-date: var(--font-size-18);
+    --font-size-link: var(--font-size-16);
+    --font-size-heading-small: var(--font-size-16);
+    --font-size-body-secondary: var(--font-size-16);
+    --font-size-body-small: var(--font-size-14);
 
-      /* typography */
-      --primary-text-color: var(--color-white-100);
+    /* typography scale — weights */
+    --font-weight-display-large: var(--font-weight-bold);
+    --font-weight-display-medium: var(--font-weight-bold);
+    --font-weight-heading-large: var(--font-weight-bold);
+    --font-weight-heading-label: var(--font-weight-bold);
+    --font-weight-heading-data: var(--font-weight-medium);
+    --font-weight-subheading-date: var(--font-weight-medium);
+    --font-weight-link: var(--font-weight-semibold);
+    --font-weight-heading-small: var(--font-weight-bold);
+    --font-weight-body-secondary: var(--font-weight-regular);
+    --font-weight-body-small: var(--font-weight-regular);
 
-       /* border sizes */
-      --border-round-date-panel: var(--border-radius-30);
+    /* design */
+    --app-background: var(--color-blue-navy-100);
+
+    /* typography */
+    --primary-text-color: var(--color-white-100);
+
+    /* border sizes */
+    --border-round-date-panel: var(--border-radius-30);
 }
