@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family-montserrat);
     background-color: var(--app-background);
     display: flex;
     justify-content: center;
@@ -17,106 +17,144 @@ body {
 /* --- 2. Main Container --- */
 main {
     display: flex;
-    align-items: center; 
-    width: 1015px; 
-    height: 666px; 
+    align-items: center;
+    width: 1015px;
+    height: 666px;
     position: relative;
 }
 
-/* --- 3. Left Panel (Monday) - Absolute Positioning per Guidelines --- */
+/* --- 3. Left Panel --- */
 .current-weather {
-    width: 493px; 
-    height: 666px; 
+    width: 493px;
+    height: 666px;
     background: url('../images/waves.svg') no-repeat center;
     background-size: cover;
     color: white;
-    border-radius: 30px; 
-    z-index: 2; 
+    border-radius: 30px;
+    z-index: 2;
     box-shadow: 10px 0 30px rgba(0,0,0,0.3);
     position: relative;
 }
 
-/* Monday: Adjusted slightly higher based on overlay */
-.current-weather h1 { 
-    font-size: 40px; 
+/* Monday */
+.current-weather h1 {
+    font-size: var(--font-size-display-large);
+    font-weight: var(--font-weight-display-large);
     position: absolute;
-    top: 45px; 
+    top: 44px;
     left: 44px;
 }
 
-/* 20 Jun 2022: Your Anchor Point (Correct Position) */
-.current-weather time { 
-    font-size: 24px; 
+/* 20 Jun 2022 */
+.current-weather time {
+    font-size: var(--font-size-subheading-date);
+    font-weight: var(--font-weight-subheading-date);
     position: absolute;
-    top: 100px; 
+    top: 96px;
     left: 44px;
 }
 
-/* Biarritz, FR: Adjusted based on guidelines */
+/* Biarritz, FR */
 .location-biarritz-row {
     display: flex;
     align-items: center;
     gap: 8px;
     position: absolute;
-    top: 148px; 
+    top: 136px;
+    left: 44px;
+    font-size: var(--font-size-body-secondary);
+    font-weight: var(--font-weight-body-secondary);
+}
+
+.icon-biarritz { width: 20px; height: 20px; }
+
+/* Main Sun Icon */
+.weather-icon-main {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 430px;
     left: 44px;
 }
 
-.icon-biarritz { width: 27px; height: 27px; }
-
-/* Main Sun Icon: Pushed down based on red guidelines */
-.weather-icon-main { 
-    width: 95px; 
-    height: 95px; 
+/* 29 °C */
+.temp-big {
+    font-size: var(--font-size-display-large);
+    font-weight: var(--font-weight-display-large);
     position: absolute;
-    top: 388px; 
+    top: 510px;
     left: 44px;
 }
 
-/* 29 °C: Adjusted higher than previous version per guidelines */
-.temp-big { 
-    font-size: 50px; 
-    font-weight: 700; 
+/* Sunny */
+.weather-desc {
+    font-size: var(--font-size-display-medium);
+    font-weight: var(--font-weight-display-medium);
     position: absolute;
-    top: 495px; 
-    left: 44px;
-}
-
-/* Sunny: Locked at 84px from the very bottom edge */
-.weather-desc { 
-    font-size: 30px; 
-    font-weight: 700; 
-    position: absolute;
-    bottom: 84px; 
+    top: 562px;
     left: 44px;
 }
 
 /* --- 4. Right Panel --- */
 #weather-details {
-    width: 522px; 
-    height: 623px; 
-    background-color: #222831; 
+    width: 522px;
+    height: 623px;
+    background-color: #222831;
     padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     color: white;
     border-radius: 0 30px 30px 0;
-    margin-left: -20px; 
-    padding-left: 60px; 
+    margin-left: -20px;
+    padding-left: 60px;
     position: relative;
 }
 
-dl { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 0; }
-dt { font-weight: 700; font-size: 28px; text-transform: uppercase; }
-dd { text-align: right; font-weight: 500; font-size: 28px; }
+dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 0;
+}
 
-.unit-toggle { display: flex; justify-content: space-between; align-items: center; width: 415px; }
-.label-temp { font-size: 28px; font-weight: 700; }
-.unit-toggle button, .slash { background: none; border: none; color: white; font-family: inherit; font-size: 28px; font-weight: 500; }
+dt {
+    font-weight: var(--font-weight-heading-label);
+    font-size: var(--font-size-heading-label);
+    text-transform: uppercase;
+}
+
+dd {
+    text-align: right;
+    font-weight: var(--font-weight-heading-data);
+    font-size: var(--font-size-heading-data);
+}
+
+.unit-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 415px;
+}
+
+.label-temp {
+    font-size: var(--font-size-heading-label);
+    font-weight: var(--font-weight-heading-label);
+}
+
+.unit-toggle button,
+.slash {
+    background: none;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: var(--font-size-heading-label);
+    font-weight: var(--font-weight-heading-data);
+    cursor: pointer;
+}
+
 .unit-toggle button[aria-label="Fahrenheit"] { opacity: 0.4; }
 
-/* --- 5. Forecast (Side-to-Side) --- */
+/* --- 5. Forecast --- */
 .forecast-outer-bg {
     width: 415px;
     height: 165px;
@@ -134,8 +172,8 @@ dd { text-align: right; font-weight: 500; font-size: 28px; }
 }
 
 .day-card {
-    width: 103px; 
-    height: 165px; 
+    width: 103px;
+    height: 165px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -146,10 +184,10 @@ dd { text-align: right; font-weight: 500; font-size: 28px; }
 
 .day-card.active { background-color: white; color: #222831; }
 .forecast-icon { width: 54px; height: 54px; }
-.day-label { font-size: 20px; font-weight: 500; }
-.forecast-temp { font-size: 20px; font-weight: 700; }
+.day-label { font-size: var(--font-size-heading-small); font-weight: var(--font-weight-heading-small); }
+.forecast-temp { font-size: var(--font-size-heading-small); font-weight: var(--font-weight-bold); }
 
-/* --- 6. Footer & NYC Button --- */
+/* --- 6. Footer --- */
 .btn-location {
     width: 415px;
     height: 53px;
@@ -157,8 +195,8 @@ dd { text-align: right; font-weight: 500; font-size: 28px; }
     border-radius: 10px;
     background: linear-gradient(90deg, #8EDAD5, #6376DD);
     color: white;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-link);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -166,7 +204,15 @@ dd { text-align: right; font-weight: 500; font-size: 28px; }
     padding: 0 10px;
 }
 
-.location-group { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; }
+.location-group {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .icon-nyc { width: 33px; height: 33px; }
 .plus-icon { width: 48px; height: 48px; margin-left: auto; }
 
@@ -176,7 +222,7 @@ dd { text-align: right; font-weight: 500; font-size: 28px; }
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 100;
