@@ -154,6 +154,9 @@ dd {
 
 .unit-toggle button[aria-label="Fahrenheit"] { opacity: 0.4; }
 
+dl dt:nth-child(5),
+dl dd:nth-child(6) { margin-bottom: 20px; }
+
 /* --- 5. Forecast --- */
 .forecast-outer-bg {
     width: 415px;
