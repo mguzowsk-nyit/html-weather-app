@@ -78,4 +78,8 @@
 
     /* border sizes */
     --border-round-date-panel: var(--border-radius-30);
+
+    /* panel colors */
+    --panel-dark: #222831;
+    --panel-darker: #272E37;
 }
